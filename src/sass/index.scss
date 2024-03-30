@@ -11,7 +11,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.89);
   padding: 10px;
   border-radius: 10px;
   z-index: 999;
@@ -21,11 +21,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: auto; /* Agrega esta propiedad para permitir el scroll vertical */
   @include tablet{
     display: flex;
     width: 100%;
     height: 100%;
-    flex-direction: column;
+    
    
   }
   
@@ -33,6 +34,7 @@
 
 .ventana {
   color: white;
+  overflow-y: auto; /* Agrega esta propiedad para permitir el scroll vertical */
   @include tablet{
    
     
