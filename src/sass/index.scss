@@ -1,0 +1,192 @@
+@import "../sass/Medidas";
+@import "../sass/Proyectos";
+@import "../sass/SobreMi";
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.ventana-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 999;
+  @include tablet{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+   
+  }
+  
+}
+
+.ventana {
+  color: white;
+  @include tablet{
+   
+    
+    
+  }
+}
+.close{
+  color: #000000;
+  font-size: 30px;
+  background-color: #fff;
+  width: 20px;
+  padding: 0px 10px;
+  text-align: center;
+  border-radius: 50%;
+  transition: .5s;
+  position:relative;
+  right: -95%;
+  margin: 10px 0px;
+  cursor: pointer;
+  &:hover{
+    background-color: rgba(255, 0, 0, 0.37);
+    transition:.5s ;
+  }
+}
+
+
+.container{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ padding: 0px 0px;
+  width: 100%;
+  @include mobile{
+    width: 100%;
+  }
+  .titulo{
+    height: 90px;
+    text-align: center;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    .titulo-head{
+      font-size: 34px;
+      font-family: "Nunito", sans-serif;
+      font-style: italic;
+      font-weight: 700;
+      
+    }
+  }
+  .cv{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    gap: 10px;
+      .titulo-content{
+      position: relative;
+      bottom: 45px;
+      text-transform: uppercase;
+      left: 50px;
+      font-family: "Nunito", sans-serif;
+      font-weight: 700;
+    }
+    @include tablet{
+      width: 100%;
+    }
+    @include mobile{
+      width: 100%;
+    }
+  }
+  .secciones{
+   
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    @include tablet{
+      width: 100%;
+    }
+    @include mobile{
+      width: 100%;
+    }
+    .seccion{
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+      background-size: 90%;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 20px;
+      filter: drop-shadow(-1px 5px 10px #000000);
+     cursor: pointer;
+      background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnBxNGJneHM5OXM2Ymwybzh0d2k5YTB2MjR4MHY0YnN5cHZ0dWJueiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1k889fiqiZV19HO2sx/giphy.gif");
+     &:hover{
+      filter: drop-shadow(-1px 5px 10px #140202);     }
+      @include tablet{
+        width: 90%;
+        height: 300px;
+        background-size: 50%;
+      }
+      @include mobile{
+        width: 90%;
+        height: 300px;
+        
+      }
+      .titulo-content{
+      position: relative;
+      bottom: 45px;
+      text-transform: uppercase;
+      left: 50px;
+      font-family: "Nunito", sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 24px;
+      color: #000000;
+    }
+    }
+    .seccion2{
+      display: flex;
+      justify-content: end;
+      flex-direction: column;
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+      background-size: 90%;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 20px;
+      filter: drop-shadow(-1px 5px 10px #000000);
+     cursor: pointer;
+      background-image: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG9uMndzcDA4dm41dXdhaWhmdmhkZGVyOHNqdWtwbHNwYmVyMXdteiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0IAPszdB8MMjPxNhFL/giphy.gif");
+      @include tablet{
+        width: 90%;
+        height: 300px;
+        background-size: 70%;
+      }
+      @include mobile{
+        width: 90%;
+        height: 300px;
+      }
+      .titulo-content{
+        position: relative;
+        bottom: 50px;
+        text-transform: uppercase;
+        left: 50px;
+        font-family: "Nunito", sans-serif;
+        font-weight: 700;
+        .titulo-content{
+          text-decoration: none;
+        }
+      }
+    }
+    
+  }
+}
