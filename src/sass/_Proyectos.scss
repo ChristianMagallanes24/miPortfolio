@@ -16,8 +16,14 @@
         @include tablet{
             
         }
+        @include mobile {
+            width: 90%;
+        }
         .img-container{
             width: 300px;
+            @include mobile {
+                width: 100%;
+            }
             .img{
                 width: 100%;
             }
