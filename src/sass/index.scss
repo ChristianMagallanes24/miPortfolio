@@ -1,7 +1,9 @@
 @import "../sass/Medidas";
 @import "../sass/Proyectos";
 @import "../sass/SobreMi";
-*{
+@import "../sass/Tecnologias";
+
+* {
   padding: 0;
   margin: 0;
 }
@@ -11,7 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.89);
+  background-color: rgb(84, 158, 228);
   padding: 10px;
   border-radius: 10px;
   z-index: 999;
@@ -21,108 +23,168 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* Agrega esta propiedad para permitir el scroll vertical */
-  @include tablet{
+  overflow-y: auto;
+
+  @include tablet {
     display: flex;
     width: 100%;
     height: 100%;
-    
-   
   }
-  
+  @include mobile{
+    padding: 0;
+    overflow: none;
+    height: 100vh;
+    padding-top: 25px;
+  }
 }
 
 .ventana {
   color: white;
-  overflow-y: auto; /* Agrega esta propiedad para permitir el scroll vertical */
-  @include tablet{
-   
-    
-    
+  
+width: 100%;
+  @include tablet {
+    /* Ajustes adicionales si son necesarios */
   }
 }
-.close{
+
+.close {
+  position: relative;
+  left: 30%;
+  bottom: 10%;
   color: #000000;
   font-size: 30px;
-  background-color: #fff;
   width: 20px;
-  padding: 0px 10px;
   text-align: center;
   border-radius: 50%;
-  transition: .5s;
- 
-  margin: 10px 0px;
+  transition: 0.5s;
   cursor: pointer;
-  &:hover{
-    background-color: rgba(255, 0, 0, 0.37);
-    transition:.5s ;
+  @include mobile{
+    left: 38%;
+    bottom: -5%;
+    font-size: 20px;
   }
 }
 
+.nav {
+  height: 200px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  @include tablet{
+    height: auto;
+  }
+@include mobile{
+  height: auto;
+}
+  .titulo-nav {
+    font-size: 34px;
+    font-family: "Nunito", sans-serif;
+    font-style: italic;
+    color: #ffffff;
+    font-weight: 700;
+    @include mobile{
+      font-size: 20px;
+    }
+  }
+}
 
-.container{
-
+.container {
+  background-color: #6f7cf1;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
- padding: 0px 0px;
   width: 100%;
-  @include mobile{
-    width: 100%;
+  @include tablet{
+    height: auto;
   }
-  .titulo{
+  @include mobile {
+    width: 100%;
+    height: auto;
+  }
+
+  .titulo {
     height: 90px;
     text-align: center;
     display: flex;
-    
     justify-content: center;
     align-items: center;
-    .titulo-head{
-      font-size: 34px;
+    @include mobile{
+      font-size: 20px;
+    }
+    .titulo-head {
+      font-size: 54px;
       font-family: "Nunito", sans-serif;
       font-style: italic;
+      color: #ffffff;
       font-weight: 700;
-      
+      font-size: 24px;
     }
   }
-  .cv{
-    
+
+  .cv {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-   
     gap: 10px;
-      .titulo-content{
-     
-      
-      text-transform: uppercase;
-      
-      font-family: "Nunito", sans-serif;
+
+    .titulo-content {
+      margin-left: 15px;
+      font-family: "Nunito";
       font-weight: 700;
     }
-    @include tablet{
+
+    @include tablet {
       width: 100%;
     }
-    @include mobile{
+
+    @include mobile {
       width: 100%;
+      gap: 0px;
     }
   }
-  .secciones{
-   
+
+  .secciones {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    @include tablet{
+    gap: 30px;
+
+    @include tablet {
       width: 80%;
     }
-    @include mobile{
+
+    @include mobile {
       width: 100%;
+      gap: 0px;
     }
-    .seccion{
+
+    .seccion-proyectos {
+      background-image: url(../assets/proyectosbg.svg);
+    }
+
+    .seccion-tecnologias {
+      background-image: url(../assets/tecnologiasbg.svg);
+    }
+
+    .seccion-sobreMi {
+      background-image: url(../assets/sobremibg.svg);
+    }
+
+    .seccion-cv {
+      background-image: url(../assets/cvbg.svg);
+    }
+
+    .seccion-proyectos, 
+    .seccion-tecnologias, 
+    .seccion-sobreMi, 
+    .seccion-cv {
+      margin: 20px;
       display: flex;
       flex-direction: column;
       justify-content: end;
@@ -134,71 +196,35 @@
       background-repeat: no-repeat;
       border-radius: 20px;
       filter: drop-shadow(-1px 5px 10px #000000);
-     cursor: pointer;
-      background-image: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnBxNGJneHM5OXM2Ymwybzh0d2k5YTB2MjR4MHY0YnN5cHZ0dWJueiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1k889fiqiZV19HO2sx/giphy.gif");
-     &:hover{
-      filter: drop-shadow(-1px 5px 10px #140202);     }
-      @include tablet{
+      cursor: pointer;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: rotate(5deg);
+        filter: drop-shadow(-1px 5px 10px #140202);
+      }
+
+      @include tablet {
         width: 90%;
         height: 300px;
         background-size: 50%;
       }
-      @include mobile{
-        width: 90%;
-        height: 200px;
-        border-radius: 0;
-        filter: none;
-        
-      }
-      .titulo-content{
-     
-      text-transform: uppercase;
-     
-      font-family: "Nunito", sans-serif;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 24px;
-      color: #000000;
+
       @include mobile {
-        
-      }
-    }
-    }
-    .seccion2{
-      display: flex;
-      justify-content: end;
-      flex-direction: column;
-      width: 300px;
-      height: 300px;
-      background-color: #fff;
-      background-size: 90%;
-      background-position: center;
-      background-repeat: no-repeat;
-      border-radius: 20px;
-      filter: drop-shadow(-1px 5px 10px #000000);
-     cursor: pointer;
-      background-image: url("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG9uMndzcDA4dm41dXdhaWhmdmhkZGVyOHNqdWtwbHNwYmVyMXdteiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0IAPszdB8MMjPxNhFL/giphy.gif");
-      @include tablet{
-        width: 90%;
-        height: 300px;
-        background-size: 70%;
-      }
-      @include mobile{
         width: 90%;
         height: 200px;
+        border-radius: 20px;
+        margin: 9px;
         filter: none;
       }
-      .titulo-content{
-        
-        text-transform: uppercase;
-        
+
+      .titulo-content {
         font-family: "Nunito", sans-serif;
         font-weight: 700;
-        .titulo-content{
-          text-decoration: none;
-        }
+        font-size: 24px;
+        color: #000000;
+        text-decoration: none;
       }
     }
-    
   }
 }

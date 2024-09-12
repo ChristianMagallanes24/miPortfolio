@@ -1,0 +1,21 @@
+.tencologias-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    @include mobile{
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-tecnologias{
+        width: 200px;
+        height: 200px;
+      
+        @include mobile{
+            width: 120px;
+            height: 120px;
+        }
+    }
+}
